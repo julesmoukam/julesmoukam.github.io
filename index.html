@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jules — Economist, Political Economy of Africa</title>
+<meta name="description" content="Jules — Economist and policy researcher focused on African political economy and development.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF0E8;
+    --paper-alt:#E5E8DC;
+    --ink:#16181A;
+    --ink-soft:#42463F;
+    --indigo:#24344D;
+    --rust:#A8412B;
+    --sage:#5C6E52;
+    --hairline:#C9C3B0;
+    --max:840px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Source Serif 4', Georgia, serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--rust); color:var(--paper);}
+
+  a{color:var(--indigo); text-decoration-color:var(--hairline); text-underline-offset:3px;}
+  a:hover{color:var(--rust);}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* ---------- Masthead ---------- */
+  header.masthead{
+    border-bottom:2px solid var(--ink);
+    padding:44px 0 18px;
+  }
+  .masthead-row{
+    display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap;
+  }
+  h1.name{
+    font-family:'Fraunces', serif;
+    font-weight:800;
+    font-size:clamp(2.4rem, 6vw, 3.6rem);
+    margin:0;
+    letter-spacing:-0.01em;
+    line-height:1;
+  }
+  .name .last{color:var(--rust);}
+  .role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-align:right;
+  }
+  .role span{display:block;}
+  .tagline{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-style:italic;
+    font-size:1.15rem;
+    color:var(--ink-soft);
+    margin-top:10px;
+  }
+
+  /* ---------- Abstract ---------- */
+  section.abstract{
+    padding:34px 0 38px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--sage);
+    margin:0 0 14px;
+  }
+  .abstract p{max-width:64ch; margin:0 0 14px;}
+  .abstract p:last-child{margin-bottom:0;}
+
+  /* ---------- Writing index ---------- */
+  section.writing{padding:38px 0; border-bottom:1px solid var(--hairline);}
+  .brief{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:18px;
+    padding:20px 0;
+    border-top:1px solid var(--hairline);
+  }
+  .brief:first-of-type{border-top:none; padding-top:6px;}
+  .stamp{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    letter-spacing:0.04em;
+    color:var(--rust);
+    border:1.5px solid var(--rust);
+    border-radius:3px;
+    padding:5px 4px;
+    text-align:center;
+    transform:rotate(-3deg);
+    height:fit-content;
+    line-height:1.3;
+    opacity:0.85;
+  }
+  .brief-body h3{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:1.22rem;
+    margin:0 0 6px;
+  }
+  .brief-body h3 a{color:var(--ink); text-decoration:none; border-bottom:1px solid var(--hairline);}
+  .brief-body h3 a:hover{color:var(--rust); border-bottom-color:var(--rust);}
+  .brief-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-bottom:8px;
+  }
+  .brief-meta .tag{color:var(--sage);}
+  .brief-meta .dot{margin:0 6px; color:var(--hairline);}
+  .brief-excerpt{margin:0; color:var(--ink-soft); font-size:0.98rem;}
+
+  /* ---------- Experience ---------- */
+  section.experience{padding:38px 0; border-bottom:1px solid var(--hairline);}
+  .xp{display:grid; grid-template-columns:150px 1fr; gap:18px; padding:12px 0;}
+  .xp-date{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--ink-soft);
+    padding-top:2px;
+  }
+  .xp-role{font-weight:600; margin:0 0 2px;}
+  .xp-org{color:var(--ink-soft); font-size:0.95rem; margin:0;}
+
+  /* ---------- Footer ---------- */
+  footer{padding:34px 0 60px;}
+  .contact-row{display:flex; gap:22px; flex-wrap:wrap; margin-bottom:18px;}
+  .contact-row a{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+  }
+  .colophon{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem;
+    color:var(--ink-soft);
+    letter-spacing:0.03em;
+  }
+
+  @media (max-width:560px){
+    .masthead-row{flex-direction:column; align-items:flex-start;}
+    .role{text-align:left;}
+    .brief{grid-template-columns:48px 1fr;}
+    .xp{grid-template-columns:1fr; gap:2px;}
+  }
+
+  @media (prefers-reduced-motion:no-preference){
+    .fade-in{
+      animation:fadeIn 0.6s ease-out both;
+    }
+    @keyframes fadeIn{
+      from{opacity:0; transform:translateY(6px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="masthead fade-in">
+    <div class="masthead-row">
+      <h1 class="name">JULES <span class="last">[LAST NAME]</span></h1>
+      <div class="role">
+        <span>Research Analyst, CEPI</span>
+        <span>Sciences Po Paris / AUB</span>
+      </div>
+    </div>
+    <p class="tagline">Notes on African political economy, development policy, and the economics of getting things built.</p>
+  </header>
+
+  <section class="abstract fade-in">
+    <p class="eyebrow">Abstract</p>
+    <p>I'm a final-year Economics student at the American University of Beirut (Mastercard Foundation Scholar, Data Science minor), currently on exchange at Sciences Po Paris. I work as a Research Analyst at the Cameroon Economic Policy Institute, and previously with the SWANA Future of Work Hub at AUB's Issam Fares Institute.</p>
+    <p>My work sits at the intersection of trade policy, institutions, and youth economic inclusion in Africa — with a running thread on Cameroon. I lead AUB's African Club, where I helped organize Lebanon's first African Youth Day. Headed home to Cameroon after graduation, then on to a PhD in economics.</p>
+  </section>
+
+  <section class="writing fade-in">
+    <p class="eyebrow">Writing &amp; Policy Work</p>
+
+    <div id="writing-list"></div>
+  </section>
+
+  <section class="experience fade-in">
+    <p class="eyebrow">Experience</p>
+
+    <div class="xp">
+      <div class="xp-date">2024 — Present</div>
+      <div>
+        <p class="xp-role">Research Analyst</p>
+        <p class="xp-org">Cameroon Economic Policy Institute (CEPI)</p>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="xp-date">2023 — 2024</div>
+      <div>
+        <p class="xp-role">Policy Research Assistant</p>
+        <p class="xp-org">SWANA Future of Work Hub, Issam Fares Institute, AUB</p>
+      </div>
+    </div>
+    <div class="xp">
+      <div class="xp-date">Ongoing</div>
+      <div>
+        <p class="xp-role">President, African Club</p>
+        <p class="xp-org">American University of Beirut</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="fade-in">
+    <div class="contact-row">
+      <a href="mailto:youremail@example.com">youremail@example.com</a>
+      <a href="https://linkedin.com/in/your-handle" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/your-handle" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="colophon">Beirut / Paris / Yaoundé — updated <span id="update-date"></span></p>
+  </footer>
+
+</div>
+
+<script>
+  /* =========================================================
+     ADD NEW WRITE-UPS HERE.
+     Just add a new object to this array — no other code needs
+     to change. Newest items are shown first automatically.
+
+     fields:
+       number  -> "01", "02"... (brief/index number, keep as string)
+       title   -> title of the piece
+       tag     -> short category label, e.g. "Trade Policy"
+       date    -> "MMM YYYY", e.g. "Jun 2026"
+       link    -> URL to the piece (use "#" if unpublished yet)
+       excerpt -> one-sentence description
+  ========================================================= */
+  const writeups = [
+    {
+      number: "05",
+      title: "Cameroon's Rice Import Substitution Strategy: A Look at PIISAH 2024–2026",
+      tag: "Trade Policy",
+      date: "2026",
+      link: "#",
+      excerpt: "A CEPI policy brief examining Cameroon's push for rice self-sufficiency and the institutional bottlenecks in its way."
+    },
+    {
+      number: "04",
+      title: "Debate Panel Design, National Youth Economic Forum Cameroon",
+      tag: "Youth & Policy",
+      date: "2026",
+      link: "#",
+      excerpt: "Structured debate proposal co-hosted with YALI, built to sharpen youth economic policy literacy."
+    },
+    {
+      number: "03",
+      title: "The Anglophone Crisis and Its Economic Toll",
+      tag: "Political Economy",
+      date: "2025",
+      link: "#",
+      excerpt: "On how a political conflict became an economic one — and what it has cost Cameroon's Anglophone regions."
+    },
+    {
+      number: "02",
+      title: "Women in Business Under the Weight of the Anglophone Crisis",
+      tag: "Gender & Development",
+      date: "2024",
+      link: "#",
+      excerpt: "Written for MENA Madam, on the gendered economic disruption of Cameroon's ongoing crisis."
+    },
+    {
+      number: "01",
+      title: "Lebanon's Currency Peg and the Impossible Trinity",
+      tag: "Macroeconomics",
+      date: "2023",
+      link: "#",
+      excerpt: "An argumentative paper on the peg's collapse, BdL's financial engineering, and lessons from Chile's 1999 exit."
+    }
+  ];
+
+  const list = document.getElementById('writing-list');
+  writeups
+    .slice()
+    .sort((a, b) => b.number.localeCompare(a.number))
+    .forEach(w => {
+      const el = document.createElement('div');
+      el.className = 'brief';
+      el.innerHTML = `
+        <div class="stamp">BRIEF<br>№${w.number}</div>
+        <div class="brief-body">
+          <h3><a href="${w.link}" target="_blank" rel="noopener">${w.title}</a></h3>
+          <p class="brief-meta"><span class="tag">${w.tag}</span><span class="dot">&middot;</span>${w.date}</p>
+          <p class="brief-excerpt">${w.excerpt}</p>
+        </div>`;
+      list.appendChild(el);
+    });
+
+  document.getElementById('update-date').textContent =
+    new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+</script>
+
+</body>
+</html>
