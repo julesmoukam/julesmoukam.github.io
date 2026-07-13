@@ -77,6 +77,31 @@
     padding:34px 0 38px;
     border-bottom:1px solid var(--hairline);
   }
+  .abstract-grid{
+    display:grid;
+    grid-template-columns:150px 1fr;
+    gap:26px;
+    align-items:start;
+  }
+  .portrait figure{margin:0;}
+  .portrait img{
+    width:100%;
+    aspect-ratio:4/5;
+    object-fit:cover;
+    display:block;
+    border:1.5px solid var(--ink);
+    filter:grayscale(35%) contrast(1.02);
+    background:var(--paper-alt);
+  }
+  .portrait figcaption{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.66rem;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    margin-top:6px;
+    text-align:center;
+  }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
     font-size:0.72rem;
@@ -87,6 +112,10 @@
   }
   .abstract p{max-width:64ch; margin:0 0 14px;}
   .abstract p:last-child{margin-bottom:0;}
+
+  @media (max-width:560px){
+    .abstract-grid{grid-template-columns:110px 1fr;}
+  }
 
   /* ---------- Writing index ---------- */
   section.writing{padding:38px 0; border-bottom:1px solid var(--hairline);}
@@ -182,19 +211,29 @@
 
   <header class="masthead fade-in">
     <div class="masthead-row">
-      <h1 class="name">JULES <span class="last">MOUKAM</span></h1>
+      <h1 class="name">JULES <span class="last">[LAST NAME]</span></h1>
       <div class="role">
         <span>Research Analyst, CEPI</span>
-        <span>AUB / Sciences Po Paris </span>
+        <span>Sciences Po Paris / AUB</span>
       </div>
     </div>
-    <p class="tagline">Notes on African development policy, political economy and the economics of improving lives.</p>
+    <p class="tagline">Notes on development economics, policy evaluation, and the econometrics of what actually works.</p>
   </header>
 
   <section class="abstract fade-in">
     <p class="eyebrow">Abstract</p>
-    <p>I'm a final-year Economics student at the American University of Beirut (Mastercard Foundation Scholar, Data Science minor), currently on exchange at Sciences Po Paris. I work as a Research Analyst at the Cameroon Economic Policy Institute, and previously with the SWANA Future of Work Hub at AUB's Issam Fares Institute.</p>
-    <p>My work sits at the intersection of trade policy, institutions, and youth economic inclusion in Africa — with a running thread on Cameroon. I lead AUB's African Club, where I helped organize Lebanon's first African Youth Day. Headed home to Cameroon after graduation, then on to a PhD in economics.</p>
+    <div class="abstract-grid">
+      <div class="portrait">
+        <figure>
+          <img src="photo.jpg" alt="Portrait of Jules">
+          <figcaption>Fig. 1 — J. [Last Name]</figcaption>
+        </figure>
+      </div>
+      <div>
+        <p>I'm a final-year Economics student at the American University of Beirut (Mastercard Foundation Scholar, Data Science minor), currently on exchange at Sciences Po Paris. I work as a Research Analyst at the Cameroon Economic Policy Institute, and previously with the SWANA Future of Work Hub at AUB's Issam Fares Institute.</p>
+        <p>My focus is development economics: using econometrics and data science to model economic outcomes, and evaluating public policy to see what interventions actually move the needle — with recurring applications in trade, agriculture, and labor policy, and a running thread back to Cameroon. I lead AUB's African Club, where I helped organize Lebanon's first African Youth Day. Headed home after graduation, then on to a PhD in economics.</p>
+      </div>
+    </div>
   </section>
 
   <section class="writing fade-in">
@@ -223,8 +262,8 @@
     <div class="xp">
       <div class="xp-date">Ongoing</div>
       <div>
-        <p class="xp-role">National Youth Program Coordinator</p>
-        <p class="xp-org">TiC Foundation</p>
+        <p class="xp-role">President, African Club</p>
+        <p class="xp-org">American University of Beirut</p>
       </div>
     </div>
   </section>
@@ -289,11 +328,11 @@
     },
     {
       number: "01",
-      title: "An assessment of Poverty and Inequality in Cameroon",
+      title: "Lebanon's Currency Peg and the Impossible Trinity",
       tag: "Macroeconomics",
-      date: "2025",
+      date: "2023",
       link: "#",
-      excerpt: "An exploration of the contemporary poverty and inequality profile of Cameroon."
+      excerpt: "An argumentative paper on the peg's collapse, BdL's financial engineering, and lessons from Chile's 1999 exit."
     }
   ];
 
